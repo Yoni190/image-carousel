@@ -9,10 +9,13 @@
 }
 .image.active {
     display: inline;
-    width: 70%;
+    margin-left: 40%;
 }
 
 .container {
+    margin-top: 10%;
+    border: 2px solid black;
+    border-radius: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 8fr 1fr;
 }
