@@ -3,14 +3,24 @@ import "./style.css";
 
 
 const images = document.querySelectorAll('.image');
-let previousIndex = 0;
+let currentIndex = 0;
 
 const nextButton = document.querySelector('#next');
 nextButton.addEventListener('click', ()=>{
-    images[previousIndex].className = 'image';
-    if(previousIndex + 1 >= images.length){
-        previousIndex = -1;
+    images[currentIndex].className = 'image';
+    if(currentIndex + 1 >= images.length){
+        currentIndex = -1;
     }
-    images[previousIndex + 1].className = 'image active';
-    previousIndex++;
+    images[currentIndex + 1].className = 'image active';
+    currentIndex++;
+});
+
+const previousButton = document.querySelector('#previous');
+previousButton.addEventListener('click', ()=>{
+    images[currentIndex].className = 'image';
+    if(currentIndex - 1 < 0){
+        currentIndex = images.length;
+    }
+    images[currentIndex - 1].className = 'image active';
+    currentIndex--;
 })
