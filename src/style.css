@@ -22,3 +22,8 @@
     display: grid;
     grid-template-columns: 1fr 8fr 1fr;
 }
+.circle {
+    display: inline;
+    margin-left: 20px;
+    cursor: grab;
+}

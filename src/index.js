@@ -10,7 +10,7 @@ const circlesContainer = document.querySelector('#circles');
 let currentIndex = 0;
 
 for(let i = 0; i < imageCount; i++){
-    const dot = document.createElement('button');
+    const dot = document.createElement('p');
     dot.innerHTML = 'O';
     dot.className = `circle ${i}`;
     circlesContainer.appendChild(dot);
