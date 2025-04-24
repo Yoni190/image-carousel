@@ -37,8 +37,6 @@ const changeNewDot = (index) => {
 const moveForward = () => {
     //Current image becomes hidden
     images[currentIndex].className = 'image';
-    // const previousDot = document.querySelector(`.circle-${currentIndex}`);
-    // previousDot.innerHTML = '○';
 
     changePreviousDot(currentIndex);
     //Check if index reaches the end
@@ -51,8 +49,6 @@ const moveForward = () => {
     console.log(currentIndex)
 
     currentIndex++;
-    // const dot = document.querySelector(`.circle-${currentIndex}`)
-    // dot.innerHTML = '●';
     changeNewDot(currentIndex);
 }
 
@@ -74,7 +70,7 @@ previousButton.addEventListener('click', ()=>{
 //Fix bug
 dots.forEach((dot)=>{
     dot.addEventListener('click', () => {
-        const index = Number(dot.className.slice(-1));
+        const index = Number(dot.className.slice(7));
         changePreviousDot(currentIndex);
         images[currentIndex].className = 'image';
         currentIndex = index;
