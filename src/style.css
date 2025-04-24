@@ -9,7 +9,7 @@
 }
 .image.active {
     display: inline;
-    margin-left: 40%;
+    margin-left: 25%;
 }
 
 #circles {
@@ -21,9 +21,19 @@
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr 8fr 1fr;
+    width: 1000px;
+    margin-left: 25%;
 }
 .circle {
     display: inline;
     margin-left: 20px;
     cursor: grab;
+}
+
+.move{
+    background-color: black;
+    color: gold;
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 200px;
 }
