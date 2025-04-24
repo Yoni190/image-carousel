@@ -24,7 +24,7 @@
     width: 1000px;
     margin-left: 25%;
 }
-.circle {
+[class^="circle-"] {
     display: inline;
     margin-left: 20px;
     cursor: grab;
