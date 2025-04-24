@@ -1,9 +1,23 @@
 import "./style.css";
 
 
+
+
 const images = document.querySelectorAll('.image');
-const dots = document.querySelectorAll('.circle');
+const imageCount = images.length;
+const circlesContainer = document.querySelector('#circles');
+
 let currentIndex = 0;
+
+for(let i = 0; i < imageCount; i++){
+    const dot = document.createElement('button');
+    dot.innerHTML = 'O';
+    dot.className = `circle ${i}`;
+    circlesContainer.appendChild(dot);
+}
+
+const dots = document.querySelectorAll('.circle');
+
 
 const moveForward = () => {
     //Current image becomes hidden
@@ -40,5 +54,5 @@ dots.forEach((dot)=>{
     })
 })
 
-// setInterval(moveForward, 5000);
+setInterval(moveForward, 5000);
 
