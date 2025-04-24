@@ -2,14 +2,18 @@ import "./style.css";
 
 
 const images = document.querySelectorAll('.image');
+const dots = document.querySelectorAll('.circle');
 let currentIndex = 0;
 
 const moveForward = () => {
+    //Current image becomes hidden
     images[currentIndex].className = 'image';
+    //Check if index reaches the end
     if(currentIndex + 1 >= images.length){
         currentIndex = -1;
     }
-    images[currentIndex + 1].className = 'image active';
+    //Shows next image
+    images[currentIndex + 1].className = "image active";
     currentIndex++;
 }
 
@@ -22,9 +26,19 @@ previousButton.addEventListener('click', ()=>{
     if(currentIndex - 1 < 0){
         currentIndex = images.length;
     }
-    images[currentIndex - 1].className = 'image active';
+    images[currentIndex - 1].className = "image active";
     currentIndex--;
+});
+
+//Fix bug
+dots.forEach((dot)=>{
+    dot.addEventListener('click', () => {
+        const index = Number(dot.className.slice(-1));
+        images[currentIndex].className = 'image';
+        currentIndex = index;
+        images[currentIndex].className = "image active";
+    })
 })
 
-setInterval(moveForward, 5000);
+// setInterval(moveForward, 5000);
 
